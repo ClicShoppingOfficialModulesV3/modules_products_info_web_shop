@@ -1,0 +1,3 @@
+module_products_info_web_shop = Souhaitez-vous afficher une information disponibité en Magasin et Web ?
+module_products_info_web_shop_description = Afficheune information disponibité en Magasin et Web du produit dans la page de description du produit
+text_products_web_shop = Produit en disponible en Magasin et Web

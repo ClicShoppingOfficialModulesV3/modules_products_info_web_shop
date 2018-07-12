@@ -1,0 +1,4 @@
+
+ module_products_info_web_shop = Do you want to display a message : Product available in Shop and Web ?
+ module_products_info_web_shop_description = Display  a message : Product available in Shop and Web in the product_description
+ text_products_web_shop = Product available in Shop and Web
