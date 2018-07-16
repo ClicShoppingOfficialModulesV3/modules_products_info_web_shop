@@ -3,7 +3,7 @@
  * pi_products_info_only_web.php 
  * @copyright Copyright 2008 - http://www.innov-concept.com
  * @Brand : ClicShopping(Tm) at Inpi all right Reserved
- * Academic Free License ("AFL") v. 3.0
+ * @license GPL 2 License & MIT Licence
 
  */
 
