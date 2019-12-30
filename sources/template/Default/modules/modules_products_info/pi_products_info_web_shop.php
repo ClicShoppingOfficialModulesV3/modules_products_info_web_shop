@@ -34,13 +34,13 @@
     }
 
     public function execute() {
+      $CLICSHOPPING_ProductsCommon = Registry::get('ProductsCommon');
 
-      if (isset($_GET['products_id']) && isset($_GET['Products']) ) {
+      if ($CLICSHOPPING_ProductsCommon->getID() && isset($_GET['Products']) ) {
 
         $content_width = (int)MODULE_PRODUCTS_INFO_WEB_SHOP_CONTENT_WIDTH;
         $text_position = MODULE_PRODUCTS_INFO_WEB_SHOP_POSITION;
 
-        $CLICSHOPPING_ProductsCommon = Registry::get('ProductsCommon');
         $CLICSHOPPING_Template = Registry::get('Template');
 
         $products_web_shop = $CLICSHOPPING_ProductsCommon->getProductsWebAndShop();
@@ -49,7 +49,7 @@
           $products_web_shop_content = '<!-- Start only web products -->' . "\n";
 
           ob_start();
-          require($CLICSHOPPING_Template->getTemplateModules($this->group . '/content/products_info_web_shop'));
+          require_once($CLICSHOPPING_Template->getTemplateModules($this->group . '/content/products_info_web_shop'));
           $products_web_shop_content .= ob_get_clean();
 
           $products_web_shop_content .= '<!-- end only web products  -->' . "\n";
@@ -71,10 +71,10 @@
       $CLICSHOPPING_Db = Registry::get('Db');
 
       $CLICSHOPPING_Db->save('configuration', [
-          'configuration_title' => 'Souhaitez-vous activer ce module ?',
+          'configuration_title' => 'Do you want to enable this module ?',
           'configuration_key' => 'MODULE_PRODUCTS_INFO_WEB_SHOP_STATUS',
           'configuration_value' => 'True',
-          'configuration_description' => 'Souhaitez vous activer ce module à votre boutique ?',
+          'configuration_description' => 'Do you want to enable this module in your shop ?',
           'configuration_group_id' => '6',
           'sort_order' => '1',
           'set_function' => 'clic_cfg_set_boolean_value(array(\'True\', \'False\'))',
@@ -83,10 +83,10 @@
       );
 
       $CLICSHOPPING_Db->save('configuration', [
-          'configuration_title' => 'Veuillez selectionner la largeur de l\'affichage?',
+          'configuration_title' => 'Please select the width of the display?',
           'configuration_key' => 'MODULE_PRODUCTS_INFO_WEB_SHOP_CONTENT_WIDTH',
           'configuration_value' => '12',
-          'configuration_description' => 'Veuillez indiquer un nombre compris entre 1 et 12',
+          'configuration_description' => 'Please enter a number between 1 and 12',
           'configuration_group_id' => '6',
           'sort_order' => '1',
           'set_function' => 'clic_cfg_set_content_module_width_pull_down',
@@ -101,16 +101,16 @@
           'configuration_description' => 'Affiche le code barre du produit à gauche ou à droite<br><br><i>(Valeur Left = Gauche <br>Valeur Right = Droite <br>Valeur None = Aucun)</i>',
           'configuration_group_id' => '6',
           'sort_order' => '2',
-          'set_function' => 'clic_cfg_set_boolean_value(array(\'float-md-right\', \'float-md-left\', \'float-md-none\'),',
+          'configuration_value' => 'none',
           'date_added' => 'now()'
         ]
       );
 
       $CLICSHOPPING_Db->save('configuration', [
-          'configuration_title' => 'Ordre de tri d\'affichage',
+          'configuration_title' => 'Sort order',
           'configuration_key' => 'MODULE_PRODUCTS_INFO_WEB_SHOP_SORT_ORDER',
-          'configuration_value' => '100',
-          'configuration_description' => 'Ordre de tri pour l\'affichage (Le plus petit nombre est montré en premier)',
+          'configuration_value' => '128',
+          'configuration_description' => 'Sort order of display. Lowest is displayed first. The sort order must be different on every module',
           'configuration_group_id' => '6',
           'sort_order' => '3',
           'set_function' => '',
