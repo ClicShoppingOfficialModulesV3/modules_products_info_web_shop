@@ -128,7 +128,7 @@
     }
 
     public function keys() {
-      return array (
+      return array(
         'MODULE_PRODUCTS_INFO_WEB_SHOP_STATUS',
         'MODULE_PRODUCTS_INFO_WEB_SHOP_CONTENT_WIDTH',
         'MODULE_PRODUCTS_INFO_WEB_SHOP_POSITION',
