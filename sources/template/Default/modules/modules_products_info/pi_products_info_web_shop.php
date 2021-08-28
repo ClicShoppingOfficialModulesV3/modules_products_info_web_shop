@@ -13,10 +13,10 @@
   use ClicShopping\OM\CLICSHOPPING;
 
   class pi_products_info_web_shop {
-    public $code;
+    public string $code;
     public $group;
-    public string $title;
-    public string $description;
+    public $title;
+    public $description;
     public ?int $sort_order = 0;
     public bool $enabled = false;
 
